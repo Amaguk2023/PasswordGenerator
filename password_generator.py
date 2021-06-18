@@ -1,131 +1,115 @@
-import string, secrets, sys
+import string
+import secrets
+import sys
 
 # Zorkol Password Generator (ZPG)
+
+
 # PYTHON 3.7
 
+
 # Welcome Message
+
 print('\n')
-print('''
- ZPGZPGZPGZPGZPG     ZPGZPGZPGZPGZPG        ZPGZPGZPGZPGZPG
-             ZPG   ZPG             ZPG   ZPG               ZPG
-            ZPG    ZPG             ZPG   ZPG               ZPG
-           ZPG     ZPG             ZPG   ZPG               ZPG
-          ZPG      ZPG             ZPG   ZPG               ZPG
-         ZPG       ZPG             ZPG   ZPG
-        ZPG        ZPG             ZPG   ZPG
-       ZPG         ZPGZPGZPGZPGZPGZPG    ZPGZPGZPGZPGZPGZPGZPG
-      ZPG          ZPG                   ZPG               ZPG
-     ZPG           ZPG                   ZPG               ZPG
-    ZPG            ZPG                   ZPG               ZPG
-   ZPG             ZPG                   ZPG               ZPG
-  ZPG              ZPG                   ZPG               ZPG
- ZPG               ZPG                   ZPG               ZPG
- ZPGZPGZPGZPGZPG   ZPG                      ZPGZPGZPGZPGZPG
-\n''')
+print(' ZPGZPGZPGZPGZPG     ZPGZPGZPGZPGZPG        ZPGZPGZPGZPGZPG')
+print('             ZPG   ZPG             ZPG   ZPG               ZPG')
+print('            ZPG    ZPG             ZPG   ZPG               ZPG')
+print('           ZPG     ZPG             ZPG   ZPG               ZPG')
+print('          ZPG      ZPG             ZPG   ZPG               ZPG')
+print('         ZPG       ZPG             ZPG   ZPG')
+print('        ZPG        ZPG             ZPG   ZPG')
+print('       ZPG         ZPGZPGZPGZPGZPGZPG    ZPGZPGZPGZPGZPGZPGZPG')
+print('      ZPG          ZPG                   ZPG               ZPG')
+print('     ZPG           ZPG                   ZPG               ZPG')
+print('    ZPG            ZPG                   ZPG               ZPG')
+print('   ZPG             ZPG                   ZPG               ZPG')
+print('  ZPG              ZPG                   ZPG               ZPG')
+print(' ZPG               ZPG                   ZPG               ZPG')
+print('ZPGZPGZPGZPGZPG    ZPG                      ZPGZPGZPGZPGZPG\n')
 
 print('Welcome to Zorkol Password Generator (ZPG).\n')
-               
 
-def zorkol_password_generator(): #Main Function
 
-	request = False #Variable is to False
-	while not request: #Its on hold at the moment.
-		
+# Function Definition
+
+
+def zorkol_password_generator():
+
+	request = False
+	while request == False:
+
 		try:
 
-			request = input('Would you like to create a new password? (Y/n) ').lower() 
-			if (request == 'y'):
+			request = input('Would you like to create a new password? (Y/N) ')
+			if request.upper() in ('Y', '\n'):
 
-				include_punctuation = False
-				while not include_punctuation:
+				puntn = False
 
-					include_punctuation = input('\nDo you want your password to include punctuation characters? (Y/n) ').lower() 
-
-					if include_punctuation == 'y':
-						with_punctuation()
+				while puntn == False:
+					puntn = input(
+					'\nDo you want your password to include punctuation characters? (Y/N) ')
 					
-					elif include_punctuation == 'n':
-						without_punctuation()
-						
+					if puntn.upper() in 'Y':
+						try:
+							password_length = int(
+								input('\nLength of passwords > '))
+							password_amount = int(
+								input('\nAmount of passwords > '))
+							amount_lst = []
+							if password_length == 0 or password_amount < 0:
+								print("You have entered a negative number. Please try again with a positive one!")
+						except Exception as error:
+							print("You have given an incorrect value for either the lenght of the password or the amount of passwords to be generated.")
+							print(error)
+							sys.exit()
+
+						while len(amount_lst) <= password_amount:
+
+							amount_lst.append(''.join(secrets.choice(list(string.ascii_letters) + list(
+								string.digits) + list(string.punctuation)) for i in range(password_length)))
+
+							if len(amount_lst) == password_amount:
+								with open('Password_List.txt', 'w') as pl:
+									pl.writelines('\n'.join(amount_lst))
+									pl.close()
+									print(
+										'\nPassword_List.txt has been exported.')
+									print('\nThank you for using ZPG!\n')
+
+					elif puntn.upper() in 'N':
+						password_length = int(
+							input('\nLength of passwords > '))
+						password_amount = int(
+							input('\nAmount of passwords > '))
+						amount_lst = []
+
+						while len(amount_lst) <= password_amount:
+
+							amount_lst.append(''.join(secrets.choice(list(
+								string.ascii_letters) + list(string.digits)) for i in range(password_length)))
+
+						if len(amount_lst) == password_amount:
+								with open('Password_List.txt', 'w') as pl:
+									pl.writelines('\n'.join(amount_lst))
+									pl.close()  # file is closed
+									print(
+										'\nPassword_List.txt has been exported.')
+									print('\nThank you for using ZPG!\n')
+
 					else:
 						print('\nPlease check your spelling, value not accepted.')
-						include_punctuation = False
+						puntn = False
 
-			elif (request == 'n'):
+			elif request.upper() in ('N', '\n'):
 				print('\nGoodbye!\n')
 
-			else: 
+			else:
 				print('\nPlease check your spelling, value not accepted.\n')
-				if __name__ == '__main__': zorkol_password_generator() 
+				request = False
 
-		except KeyboardInterrupt: 
+		except KeyboardInterrupt:
 			print('\nGoodbye!\n')
-			sys.exit(0)
-			
-#PASSWORDS WITH PUNCTUATITION CHARACTERS FUNCTIONS
-def with_punctuation(): 
-	password_length_amount_with_punctuation()
-
-def password_length_amount_with_punctuation(): 
-	try:
-		password_length = int(input('\nLength of passwords > '))
-		password_amount = int(input('\nAmount of passwords > '))
-		amount_lst = []
-		for i in range(password_amount):
-			amount_lst.append(''.join(secrets.choice(list(string.ascii_letters) + list(string.digits) + list(string.punctuation)) for i in range (password_length))) 
-			return export_message(amount_lst)	
-				
-	
-	except ValueError: 
-		print('\nPlease enter a valid number.')
-		with_punctuation()
+			sys.exit()
 
 
-#PASSWORDS WITHOUT PUNCTUATITION CHARACTERS FUNCTIONS
-def without_punctuation(): #Passwords including intecgers and letters only
-	password_length_amount_without_punctuation()
-
-def password_length_amount_without_punctuation():
-	try:
-		password_length = int(input('\nLength of passwords > '))
-		password_amount = int(input('\nAmount of passwords > '))
-		amount_lst = []
-		for i in range(password_amount):
-			amount_lst.append(''.join(secrets.choice(list(string.ascii_letters) + list(string.digits)) for i in range (password_length))) 
-			return export_message(amount_lst)
-	
-	except ValueError:
-		print('\nPlease enter a valid number.')
-		without_punctuation()
-
-#PASSWORD FILE CREATION AND EXPORT MESSAGE
-def export_message(amount_lst):
-	with open('Password_List.txt', 'w') as pl:
-		pl.write('\n'.join(amount_lst)) 
-		pl.close()
-		print('\nPassword_List.txt has been exported.') 
-		print('\nThank you for using ZPG!\n') 
-
-	
 zorkol_password_generator()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
