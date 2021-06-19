@@ -107,5 +107,5 @@ def password_file_creation(amount_lst):
 	
 
 if __name__ == '__main__': 
-	create_password_prompt() 
+	create_password_prompt()  
 
