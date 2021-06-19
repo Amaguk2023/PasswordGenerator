@@ -1,4 +1,5 @@
-# password_generator.py 
+# password_generator.py
+A python script which generates secure passwords with a length, amount and punctuation option. All the generated passwords are written inside a .txt file which is exported to the users' pwd.
 
 #### Note: This is my first code. Please dont hesitate to leave comments!
 ### V3:
