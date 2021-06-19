@@ -27,31 +27,31 @@ print('Welcome to Zorkol Password Generator (ZPG).\n')
                
 
 #PASSWORD CREATION PROMPT
-def create_password():
+def create_password_prompt():
 	try:
 		
 		request = False 
 		while not request: 
 		
-			request = input('Would you like to create a new password? (Y/n) ').lower() 
+			request = input('Would you like to create a new password? (Y/n) ').lower()
 
 			if (request == 'y'):
-				punctuation_length_amount()
+				password_characteristic_prompt()
 				
 			elif (request == 'n'):
 				print('\nGoodbye!\n')
 
 			else: 
 				print('\nPlease check your spelling, value not accepted.\n')
-				request = False #Sets back request to False and process restarts.
+				request = False 
 
 	except KeyboardInterrupt: 
 		print('\nGoodbye!\n')
 		sys.exit()
 
 
-#PUNCTUATION, LENGTH AND AMOUNT
-def punctuation_length_amount():
+#PASSWORD AMOUNT, LENGH OF PASSWORD AND INCLUDE/EXCLUDE PUNCTUATION CHARACTERS PROMPT
+def password_characteristic_prompt():
 
 	try:
 		
@@ -64,10 +64,10 @@ def punctuation_length_amount():
 			include_punctuation = input('\nDo you want your password to include punctuation characters? (Y/n) ').lower() 
 			
 			if include_punctuation == 'y':
-				with_without_punctuation(password_amount, password_length, include_punctuation = True)
+				password_list_creation(password_amount, password_length, include_punctuation = True)
 					
 			elif include_punctuation == 'n':
-				with_without_punctuation(password_amount, password_length, include_punctuation = False)
+				password_list_creation(password_amount, password_length, include_punctuation = False)
 						
 			else:
 				print('\nPlease check your spelling, value not accepted.')
@@ -78,22 +78,21 @@ def punctuation_length_amount():
 		punctuation_length_amount()
 			
 
-#PASSWORD LIST CREATION WITH OR WITHOUT PUNCTUATITION 
-def with_without_punctuation(password_amount, password_length, include_punctuation): 
+#PASSWORD LIST CREATION 
+def password_list_creation(password_amount, password_length, include_punctuation): 
 	
 	if include_punctuation == True:
 		amount_lst = []
 		for i in range(password_amount):
 			amount_lst.append(''.join(secrets.choice(list(string.ascii_letters) + list(string.digits) + list(string.punctuation)) for i in range (password_length)))
-			
 			if len(amount_lst) == password_amount:
 				password_file_creation(amount_lst)
 
 	else:
 		amount_lst = []
 		for i in range(password_amount):
-			amount_lst.append(''.join(secrets.choice(list(string.ascii_letters) + list(string.digits)) for i in range (password_length)))
 			
+			amount_lst.append(''.join(secrets.choice(list(string.ascii_letters) + list(string.digits)) for i in range (password_length)))
 			if len(amount_lst) == password_amount:
 				password_file_creation(amount_lst)
 
@@ -108,25 +107,5 @@ def password_file_creation(amount_lst):
 	
 
 if __name__ == '__main__': 
-	create_password()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	create_password_prompt()
 
