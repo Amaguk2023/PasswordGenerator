@@ -75,7 +75,7 @@ def password_characteristic_prompt():
 
 	except ValueError: 
 		print('\nPlease enter a valid number.')
-		punctuation_length_amount()
+		password_characteristic_prompt()
 			
 
 #PASSWORD LIST CREATION 
