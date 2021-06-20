@@ -1,4 +1,4 @@
-PASSWORD GENERATOR
+# PASSWORD GENERATOR
 
 Python program that generates secure passwords. 
 
