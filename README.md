@@ -8,4 +8,10 @@ Passwords are written inside a .txt file, file that is exported to the users' pw
 
 Libraries used: sys, secrets, strings.
 
+UPCOMING VERSION
+
+Will include a postgresql connector to store passwords and also verify that the passwords do not exist in the postgresql table. If they do, new passwords will be generated until none exist inside the table. An encryption key will be created for secure storage.
+
+
+
 
