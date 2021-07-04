@@ -6,7 +6,7 @@ The user has the option to select the length of the password, amount of password
 
 Passwords are written inside a .txt file, file that is then exported to the users' pwd. 
 
-Other libraries that must be imported: sys, strings.
+Extra libraries that must be imported: sys, strings.
 
 *UPCOMING VERSION*
 
