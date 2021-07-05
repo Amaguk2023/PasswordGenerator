@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pyopenssl = "*"
 secrets = "*"
+art = "==5.2"
 
 [dev-packages]
 
