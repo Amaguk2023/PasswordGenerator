@@ -1,30 +1,13 @@
 import string, secrets, sys
+from art import *
 
 # Zorkol Password Generator (ZPG)
 # PYTHON 3.7
 
 #WELCOME MESSAGE
-print('\n')
-print('''
- ZPGZPGZPGZPGZPG     ZPGZPGZPGZPGZPG        ZPGZPGZPGZPGZPG
-             ZPG   ZPG             ZPG   ZPG               ZPG
-            ZPG    ZPG             ZPG   ZPG               ZPG
-           ZPG     ZPG             ZPG   ZPG               ZPG
-          ZPG      ZPG             ZPG   ZPG               ZPG
-         ZPG       ZPG             ZPG   ZPG
-        ZPG        ZPG             ZPG   ZPG
-       ZPG         ZPGZPGZPGZPGZPGZPG    ZPGZPGZPGZPGZPGZPGZPG
-      ZPG          ZPG                   ZPG               ZPG
-     ZPG           ZPG                   ZPG               ZPG
-    ZPG            ZPG                   ZPG               ZPG
-   ZPG             ZPG                   ZPG               ZPG
-  ZPG              ZPG                   ZPG               ZPG
- ZPG               ZPG                   ZPG               ZPG
- ZPGZPGZPGZPGZPG   ZPG                      ZPGZPGZPGZPGZPG
-\n''')
+tprint('''\nZPG''', font='isometric1')
 
-print('Welcome to Zorkol Password Generator (ZPG).\n')
-               
+print('Welcome to Zorkol Password Generator (ZPG).\n')              
 
 #PASSWORD CREATION PROMPT
 def create_password_prompt():
