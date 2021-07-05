@@ -7,6 +7,7 @@ name = "pypi"
 pyopenssl = "*"
 secrets = "*"
 art = "==5.2"
+rsa = "*"
 
 [dev-packages]
 
