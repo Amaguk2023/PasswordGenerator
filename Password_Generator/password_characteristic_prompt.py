@@ -1,5 +1,6 @@
 from password_list_file_creation import pwd_lst_creation
 
+#PASSWORD CHARACTERISTIC PROMPT
 def pwd_char_prompt():
 
 	try:
@@ -10,7 +11,7 @@ def pwd_char_prompt():
 		include_punctuation = False
 		while not include_punctuation:
 
-			include_punctuation = input('\nDo you want your password to include punctuation characters? (Y/n) ').lower() #This sets the variable to False and the program begins.
+			include_punctuation = input('\nDo you want your password to include punctuation characters? (Y/n) ').lower() 
 			
 			if include_punctuation == 'y':
 				pwd_lst_creation(password_amount, password_length, include_punctuation = True)
@@ -22,6 +23,6 @@ def pwd_char_prompt():
 				print('\nPlease check your spelling, value not accepted.')
 				include_punctuation = False
 
-	except ValueError: #ignores error and jumps to the next print statement + runs back to the functtion.
+	except ValueError: 
 		print('\nPlease enter a valid number.')
 		pwd_char_prompt()
