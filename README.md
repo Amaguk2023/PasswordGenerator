@@ -10,7 +10,7 @@ Extra libraries that must be imported: sys, string.
 
 *UPCOMING VERSION*
 
-Encryption option. 
+Encryption option and better aesthetics. 
 
 
 
