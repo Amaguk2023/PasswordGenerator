@@ -9,6 +9,8 @@ New additions:
 
 Extra libraries that must be imported: sys, string.
 
+First module to run >> menu.prompt.py
+
 
 
 
