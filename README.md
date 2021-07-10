@@ -4,7 +4,7 @@ The user has the option to select the length/amount of passwords. Passwords are 
 
 New additions:
 
-- Public/private key generator.
+- Public/Private key generator.
 - Password encryption/decryption.
 
 Extra libraries that must be imported: sys, string.
