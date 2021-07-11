@@ -10,8 +10,3 @@
 
 # Instructions :zap:
 1. First run the file called menu.prompt.py
-
-
-
-
-
