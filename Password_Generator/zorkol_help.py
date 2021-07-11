@@ -2,12 +2,13 @@ import return_to_menu
 import sys
 from art import tprint
 
-#ENCRYPTION INFORMATION
+
+# ENCRYPTION INFORMATION
 def zorkol_help_text():
-	try:
-		tprint('\nZH', font='isometric1')
-		print('Zorkol Help'.center(30))
-		print('''
+    try:
+        tprint('\nZH', font='isometric1')
+        print('Zorkol Help'.center(30))
+        print('''
 CTRL + C -> Back to menu. 
 
 ENCRYPTION INFORMATION:
@@ -18,8 +19,8 @@ ENCRYPTION INFORMATION:
 
 *** THE HIGHER THE AMOUNT/LENGTH OF PASSWORDS, THE HIGHER THE BITS AND ESTIMATED TIME OF ENCRYPTION. ***
 ''')
-	except KeyboardInterrupt:
-		print('\nGoodbye!\n')
-		sys.exit()
+    except KeyboardInterrupt:
+        print('\nGoodbye!\n')
+        sys.exit()
 
-	return_to_menu.back_to_menu()
+    return_to_menu.back_to_menu()
