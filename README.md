@@ -1,15 +1,15 @@
 # Description
+- The user has the option to select the length/amount of passwords. Passwords are written inside a .txt file and then exported to the users' pwd. 
 
-The user has the option to select the length/amount of passwords. Passwords are written inside a .txt file and then exported to the users' pwd. 
-
-New additions:
-
+# The Newest additions 
 - Public/Private key generator.
 - Password encryption/decryption.
 
-Extra libraries that must be imported: sys, string.
+# Requirements
+1. Extra libraries that must be imported: sys, string.
 
-First module to run >> menu.prompt.py
+# Instructions :zap:
+1. First run the file called menu.prompt.py
 
 
 
