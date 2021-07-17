@@ -1,4 +1,4 @@
-import menu_prompt 
+import __main__
 import sys
 
 #RETURN TO MENU PROMPT
@@ -7,7 +7,7 @@ def back_to_menu():
 	while not return_to_menu:
 		return_to_menu = input('Return to menu or exit? (M/e)\n').lower()
 		if return_to_menu == 'm':
-			menu_prompt.initial_prompt()
+			__main__.initial_prompt()
 		elif return_to_menu == 'e':
 			print('\nGoodbye!\n')
 			sys.exit()

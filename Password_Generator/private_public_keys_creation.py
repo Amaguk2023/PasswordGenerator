@@ -1,6 +1,5 @@
 import sys
 from Crypto.PublicKey import RSA
-import menu_prompt
 from art import tprint 
 import return_to_menu
 

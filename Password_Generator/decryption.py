@@ -2,7 +2,6 @@ from Crypto.Cipher import PKCS1_OAEP
 from Crypto.PublicKey import RSA
 import art
 import sys
-import menu_prompt
 import return_to_menu
 
 #PRIVATE KEY IMPORT
