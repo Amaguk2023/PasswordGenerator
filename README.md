@@ -1,16 +1,23 @@
 # Password Generator
 
-The user has the option to select the length/amount of passwords. Passwords are written inside a .txt file and then exported to the users' pwd. 
+***Program Features:***
+- Password Creation
+- Password Length & Amount Prompt
+- Public/Private Key Generator
+- Password Encryption/Decryption
+- Password Exporter 
 
-New additions:
+***Recent Additions:***
 
-- Public/Private key generator.
-- Password encryption/decryption.
+- Public/Private Key Generator.
+- Password Encryption/Decryption.
+- Menu
 
-Extra libraries that must be imported: sys, string.
+***Essentials:***
+- Extra libraries that must be imported: sys, string.
 
-First module to run >> menu.prompt.py
-
+***Program Execution:***
+- Python PasswordGenerator
 
 
 
