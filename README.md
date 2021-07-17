@@ -9,8 +9,8 @@
 
 ***Recent Additions:***
 
-- Public/Private Key Generator.
-- Password Encryption/Decryption.
+- Public/Private Key Generator
+- Password Encryption/Decryption
 - Menu
 
 ***Essentials:***
